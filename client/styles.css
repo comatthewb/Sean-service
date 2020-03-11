@@ -1,0 +1,72 @@
+/* *{
+  box-sizing: border-box
+} */
+
+body {
+  height: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  float: left;
+  padding: 10px;
+  height: 100%;
+}
+
+.columnOne {
+  /* position:absolute; */
+  float: left;
+  width: 100px;
+  height: 100%;
+}
+
+.buttonColumn {
+  /* padding: 10px; */
+  float: left;
+  width: 5%;
+}
+
+.buttonColumn2 {
+  width: 5%;
+  float: left;
+}
+
+.mainImage {
+  border-radius: 10px;
+  text-align: center;
+  margin: 0% auto;
+  top: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.mainImage:hover {
+  cursor: zoom-in;
+}
+
+.mainImageColumn {
+  float: left;
+  width: 65%;
+  /* padding: 10px; */
+  height: 90vh;
+  outline: auto;
+  /* overflow: hidden; */
+}
+
+.image:hover {
+  border: solid black;
+  cursor: pointer;
+}
+
+.image {
+  border: solid transparent;
+  display: block;
+  border-radius: 10px;
+  max-height: 90%;
+  max-width: 90%;
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+}
