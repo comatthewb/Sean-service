@@ -15,7 +15,8 @@ export default class App extends React.Component {
         "https://i.etsystatic.com/21944187/r/il/841260/2194774181/il_794xN.2194774181_qp31.jpg",
         "https://i.etsystatic.com/21944187/r/il/730c8a/2216603732/il_794xN.2216603732_dd2c.jpg"
       ],
-      mainImage: ""
+      mainImage: "",
+      mainImageIndex: 0
     };
   }
 
@@ -25,7 +26,36 @@ export default class App extends React.Component {
 
   hoverAction(index) {
     var bigImage = this.state.imageArr[index];
-    this.setState({ mainImage: bigImage });
+    this.setState({ mainImage: bigImage, mainImageIndex: index });
+    // this.setState({ mainImageIndex: index });
+  }
+
+  clickNext() {
+    var nextItem = this.state.mainImageIndex + 1;
+    // console.log(nextItem >= this.state.imageArr.length - 1);
+    if (nextItem >= this.state.imageArr.length) {
+      this.setState({ mainImageIndex: 0 });
+      nextItem = 0;
+    } else {
+      this.setState({ mainImageIndex: nextItem });
+    }
+    this.setState({
+      mainImage: this.state.imageArr[nextItem]
+    });
+  }
+
+  clickPrevious() {
+    var prevItem = this.state.mainImageIndex - 1;
+    // console.log(prevItem <= 0);
+    if (prevItem <= 0) {
+      this.setState({ mainImageIndex: this.state.imageArr.length - 1 });
+      prevItem = this.state.imageArr.length - 1;
+    } else {
+      this.setState({ mainImageIndex: prevItem });
+    }
+    this.setState({
+      mainImage: this.state.imageArr[prevItem]
+    });
   }
 
   render() {
@@ -44,19 +74,19 @@ export default class App extends React.Component {
               );
             })}
           </div>
-          <div className="buttonColumn">
-            <p>
-              <i className="left"></i>
-            </p>
-          </div>
-          <div className="mainImageColumn" style={{ objectFit: "contain" }}>
-            <img className="mainImage" src={this.state.mainImage}></img>
-          </div>
-          <div className="buttonColumn2">
-            <p>
-              {" "}
-              <i className="right"></i>
-            </p>
+          <div className="imageContainer">
+            <div className="buttonColumn">
+              <p>
+                <i className="lb" onClick={this.clickPrevious.bind(this)}></i>
+              </p>
+            </div>
+            <div className="mainImageColumn">
+              {/* //style={{ objectFit: "contain" }} */}
+              <img className="mainImage" src={this.state.mainImage}></img>
+            </div>
+            <div className="buttonColumn2">
+              <div className="rb" onClick={this.clickNext.bind(this)}></div>
+            </div>
           </div>
         </div>
       </div>

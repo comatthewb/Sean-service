@@ -2,8 +2,17 @@
   box-sizing: border-box
 } */
 
+/* .links {
+  float: right;
+} */
 body {
-  height: 100%;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  overflow: hidden;
+  min-width: 625px;
 }
 
 .row:after {
@@ -11,26 +20,35 @@ body {
   display: table;
   clear: both;
   float: left;
-  padding: 10px;
+  /* padding: 10px; */
   height: 100%;
+}
+
+.imageContainer {
+  display: block;
 }
 
 .columnOne {
   /* position:absolute; */
   float: left;
-  width: 100px;
+  width: 70px;
   height: 100%;
 }
 
 .buttonColumn {
-  /* padding: 10px; */
+  margin-top: 37%;
+  padding: 10px;
   float: left;
   width: 5%;
 }
 
 .buttonColumn2 {
+  margin-top: 39%;
+  display: block;
   width: 5%;
   float: left;
+  padding: 10px;
+  padding-right: 15px;
 }
 
 .mainImage {
@@ -49,9 +67,9 @@ body {
 .mainImageColumn {
   float: left;
   width: 65%;
-  /* padding: 10px; */
+  padding: 20px;
   height: 90vh;
-  outline: auto;
+  /* outline: auto; */
   /* overflow: hidden; */
 }
 
