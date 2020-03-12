@@ -76,8 +76,12 @@ body {
   stroke-width: 2px;
 }
 
-.heart.active {
+.redHeart {
   fill: red;
+}
+
+.heart:hover {
+  cursor: pointer;
 }
 
 .mainImage:hover {
