@@ -1,8 +1,8 @@
 .lb {
   display: inline-block;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  height: 45px;
+  width: 45px;
+  border-radius: 30px;
   background-color: white;
   box-shadow: 0px 0px 4px 2px rgb(230, 230, 230);
 }
@@ -10,8 +10,8 @@
 .lb:after {
   content: "";
   display: inline-block;
-  margin-top: 12px;
-  margin-left: 14px;
+  margin-top: 15px;
+  margin-left: 16px;
   width: 13px;
   height: 13px;
   border-top: 2px solid black;
@@ -23,22 +23,28 @@
 
 .lb:hover {
   box-shadow: 0px 0px 4px 3px rgb(230, 230, 230);
+  cursor: pointer;
 }
 
 .rb {
   display: inline-block;
-  height: 40px;
-  width: 40px;
-  border-radius: 20px;
+  height: 45px;
+  width: 45px;
+  border-radius: 30px;
   background-color: white;
   box-shadow: 0px 0px 4px 2px rgb(230, 230, 230);
+}
+
+.rb:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 4px 3px rgb(230, 230, 230);
 }
 
 .rb:after {
   content: "";
   display: inline-block;
-  margin-top: 12px;
-  margin-left: 9px;
+  margin-top: 15px;
+  margin-left: 11px;
   width: 13px;
   height: 13px;
   border-top: 2px solid black;
@@ -46,8 +52,4 @@
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-.rb:hover {
-  box-shadow: 0px 0px 4px 3px rgb(230, 230, 230);
 }

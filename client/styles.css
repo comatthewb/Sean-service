@@ -74,11 +74,13 @@ body {
 }
 
 .image:hover {
-  border: solid black;
+  border: 2px solid black;
   cursor: pointer;
+  opacity: 1;
 }
 
 .image {
+  opacity: 0.5;
   border: solid transparent;
   display: block;
   border-radius: 10px;
@@ -88,3 +90,6 @@ body {
   width: 65px;
   object-fit: cover;
 }
+
+
+

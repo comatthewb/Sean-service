@@ -47,8 +47,8 @@ export default class App extends React.Component {
   clickPrevious() {
     var prevItem = this.state.mainImageIndex - 1;
     // console.log(prevItem <= 0);
-    if (prevItem <= 0) {
-      this.setState({ mainImageIndex: this.state.imageArr.length - 1 });
+    if (prevItem < 0) {
+      this.setState({ mainImageIndex: this.state.imageArr.length });
       prevItem = this.state.imageArr.length - 1;
     } else {
       this.setState({ mainImageIndex: prevItem });
