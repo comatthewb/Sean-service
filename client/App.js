@@ -22,17 +22,25 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.setState({ mainImage: this.state.imageArr[0] });
+    let element = document.getElementById(`image${this.state.mainImageIndex}`);
+    element.classList.add("selectedImage");
   }
 
   hoverAction(index) {
+    var element = document.getElementById(`image${this.state.mainImageIndex}`);
+    element.classList.remove("selectedImage");
     var bigImage = this.state.imageArr[index];
-    this.setState({ mainImage: bigImage, mainImageIndex: index });
-    // this.setState({ mainImageIndex: index });
+    this.setState(state => {
+      var element = document.getElementById(`image${index}`);
+      element.classList.add("selectedImage");
+      return { mainImageIndex: index, mainImage: bigImage };
+    });
   }
 
   clickNext() {
     var nextItem = this.state.mainImageIndex + 1;
-    // console.log(nextItem >= this.state.imageArr.length - 1);
+    var element = document.getElementById(`image${this.state.mainImageIndex}`);
+    element.classList.remove("selectedImage");
     if (nextItem >= this.state.imageArr.length) {
       this.setState({ mainImageIndex: 0 });
       nextItem = 0;
@@ -42,13 +50,16 @@ export default class App extends React.Component {
     this.setState({
       mainImage: this.state.imageArr[nextItem]
     });
+    var element = document.getElementById(`image${nextItem}`);
+    element.classList.add("selectedImage");
   }
 
   clickPrevious() {
     var prevItem = this.state.mainImageIndex - 1;
-    // console.log(prevItem <= 0);
+    var element = document.getElementById(`image${this.state.mainImageIndex}`);
+    element.classList.remove("selectedImage");
     if (prevItem < 0) {
-      this.setState({ mainImageIndex: this.state.imageArr.length });
+      this.setState({ mainImageIndex: this.state.imageArr.length - 1 });
       prevItem = this.state.imageArr.length - 1;
     } else {
       this.setState({ mainImageIndex: prevItem });
@@ -56,6 +67,8 @@ export default class App extends React.Component {
     this.setState({
       mainImage: this.state.imageArr[prevItem]
     });
+    var element = document.getElementById(`image${prevItem}`);
+    element.classList.add("selectedImage");
   }
 
   render() {

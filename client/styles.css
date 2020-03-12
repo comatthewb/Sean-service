@@ -91,5 +91,7 @@ body {
   object-fit: cover;
 }
 
-
-
+.selectedImage {
+  opacity: 1;
+  border: 2px solid black;
+}
