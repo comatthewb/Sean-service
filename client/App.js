@@ -1,5 +1,6 @@
 import React from "react";
 import ColumnPic from "./ColumnPic";
+import Modal from "./Modal";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -82,9 +83,24 @@ export default class App extends React.Component {
     }
   }
 
+  modalRender() {
+    this.setState({ modalView: true });
+  }
+
+  modalClose() {
+    console.log("false");
+    this.setState({ modalView: false });
+  }
+  // modalView
+
   render() {
     return (
       <div>
+        <Modal
+          image={this.state.mainImage}
+          show={this.state.modalView}
+          close={this.modalClose.bind(this)}
+        />
         <div className="row">
           <div className="columnOne">
             {this.state.imageArr.map((item, index) => {
@@ -106,7 +122,11 @@ export default class App extends React.Component {
             </div>
             <div className="mainImageColumn">
               {/* //style={{ objectFit: "contain" }} */}
-              <img className="mainImage" src={this.state.mainImage}></img>
+              <img
+                className="mainImage"
+                src={this.state.mainImage}
+                onClick={this.modalRender.bind(this)}
+              ></img>
             </div>
             <div className="buttonColumn2">
               <svg
