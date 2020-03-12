@@ -37,7 +37,8 @@ export default class App extends React.Component {
     });
   }
 
-  clickNext() {
+  clickNext(event) {
+    event.preventDefault();
     var nextItem = this.state.mainImageIndex + 1;
     var element = document.getElementById(`image${this.state.mainImageIndex}`);
     element.classList.remove("selectedImage");
@@ -54,7 +55,8 @@ export default class App extends React.Component {
     element.classList.add("selectedImage");
   }
 
-  clickPrevious() {
+  clickPrevious(event) {
+    event.preventDefault();
     var prevItem = this.state.mainImageIndex - 1;
     var element = document.getElementById(`image${this.state.mainImageIndex}`);
     element.classList.remove("selectedImage");
@@ -70,6 +72,8 @@ export default class App extends React.Component {
     var element = document.getElementById(`image${prevItem}`);
     element.classList.add("selectedImage");
   }
+
+  heartClick() {}
 
   render() {
     return (
@@ -98,7 +102,21 @@ export default class App extends React.Component {
               <img className="mainImage" src={this.state.mainImage}></img>
             </div>
             <div className="buttonColumn2">
-              <div className="rb" onClick={this.clickNext.bind(this)}></div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 25"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  className="heart"
+                  d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z"
+                ></path>
+              </svg>
+              <div
+                className="rb button2"
+                onClick={this.clickNext.bind(this)}
+              ></div>
             </div>
           </div>
         </div>

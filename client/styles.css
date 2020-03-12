@@ -36,18 +36,23 @@ body {
 }
 
 .buttonColumn {
-  margin-top: 37%;
+  margin-top: calc(33% - 17px);
   padding: 10px;
   float: left;
   width: 5%;
 }
+.button2 {
+  float: left;
+  display: block;
+  margin-top: calc(600% + 0px);
+}
 
 .buttonColumn2 {
-  margin-top: 39%;
+  padding: 10px;
+
   display: block;
   width: 5%;
   float: left;
-  padding: 10px;
   padding-right: 15px;
 }
 
@@ -58,6 +63,21 @@ body {
   top: 50%;
   width: 100%;
   height: auto;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.heart {
+  float: right;
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.heart.active {
+  fill: red;
 }
 
 .mainImage:hover {
