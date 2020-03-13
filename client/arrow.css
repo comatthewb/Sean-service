@@ -1,4 +1,6 @@
 .lb {
+  /* position: relative;
+  z-index: -1; */
   display: inline-block;
   height: 45px;
   width: 45px;
@@ -8,6 +10,8 @@
 }
 
 .lb:after {
+  /* position: relative;
+  z-index: -1; */
   content: "";
   display: inline-block;
   margin-top: 15px;
@@ -27,17 +31,14 @@
 }
 
 .rb {
+  /* position: relative;
+  z-index: -1; */
   display: inline-block;
   height: 45px;
   width: 45px;
   border-radius: 30px;
   background-color: white;
   box-shadow: 0px 0px 4px 2px rgb(230, 230, 230);
-}
-
-.rb:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 4px 3px rgb(230, 230, 230);
 }
 
 .rb:after {
@@ -52,4 +53,9 @@
   -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.rb:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 4px 3px rgb(230, 230, 230);
 }

@@ -11,7 +11,7 @@ body {
 
 .row {
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   min-width: 625px;
 }
 
@@ -58,7 +58,7 @@ body {
 
 .mainImage {
   border-radius: 10px;
-  text-align: center;
+  text-align: right;
   margin: 0% auto;
   top: 50%;
   width: 100%;
