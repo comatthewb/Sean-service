@@ -6,6 +6,6 @@ USE ImageUrls;
 
 CREATE TABLE UrlSet(
   ID INT AUTO_INCREMENT,
-  Urls VARCHAR(250),
+  Urls text,
   PRIMARY KEY(ID)
 )

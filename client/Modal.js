@@ -1,7 +1,7 @@
 import React from "react";
 
 const Modal = props => {
-  console.log(props.close);
+  // console.log(props.close);
   if (!props.show) {
     return null;
   }

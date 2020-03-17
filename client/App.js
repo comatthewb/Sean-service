@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import ColumnPic from "./ColumnPic";
 import Modal from "./Modal";
 
@@ -8,23 +9,44 @@ export default class App extends React.Component {
 
     this.state = {
       modalView: false,
-      imageArr: [
-        "https://i.etsystatic.com/21944187/r/il/a13616/2216558138/il_794xN.2216558138_l22l.jpg",
-        "https://i.etsystatic.com/21944187/r/il/361996/2264194929/il_794xN.2264194929_cb35.jpg",
-        "https://i.etsystatic.com/21944187/r/il/1b3a26/2216558098/il_794xN.2216558098_1slb.jpg",
-        "https://i.etsystatic.com/21944187/r/il/e88cb5/2216558096/il_794xN.2216558096_3spf.jpg",
-        "https://i.etsystatic.com/21944187/r/il/841260/2194774181/il_794xN.2194774181_qp31.jpg",
-        "https://i.etsystatic.com/21944187/r/il/730c8a/2216603732/il_794xN.2216603732_dd2c.jpg"
-      ],
+      imageArr: [],
+      //   "https://i.etsystatic.com/21944187/r/il/a13616/2216558138/il_794xN.2216558138_l22l.jpg",
+      //   "https://i.etsystatic.com/21944187/r/il/361996/2264194929/il_794xN.2264194929_cb35.jpg",
+      //   "https://i.etsystatic.com/21944187/r/il/1b3a26/2216558098/il_794xN.2216558098_1slb.jpg",
+      //   "https://i.etsystatic.com/21944187/r/il/e88cb5/2216558096/il_794xN.2216558096_3spf.jpg",
+      //   "https://i.etsystatic.com/21944187/r/il/841260/2194774181/il_794xN.2194774181_qp31.jpg",
+      //   "https://i.etsystatic.com/21944187/r/il/730c8a/2216603732/il_794xN.2216603732_dd2c.jpg"
+      // ],
       mainImage: "",
       mainImageIndex: 0
     };
   }
 
+  rerender() {
+    axios
+      .get("http://127.0.0.1:3030/imageurl")
+      .then(results => {
+        var mainImg = results.data[0];
+        this.setState(
+          {
+            imageArr: results.data,
+            mainImage: mainImg
+          },
+          () => {
+            let element = document.getElementById(
+              `image${this.state.mainImageIndex}`
+            );
+            element.classList.add("selectedImage");
+          }
+        );
+      })
+      .catch(err => {
+        console.error("this is the err", err);
+      });
+  }
+
   componentDidMount() {
-    this.setState({ mainImage: this.state.imageArr[0] });
-    let element = document.getElementById(`image${this.state.mainImageIndex}`);
-    element.classList.add("selectedImage");
+    this.rerender();
   }
 
   hoverAction(index) {
@@ -88,7 +110,7 @@ export default class App extends React.Component {
   }
 
   modalClose() {
-    console.log("false");
+    // console.log("false");
     this.setState({ modalView: false });
   }
   // modalView
