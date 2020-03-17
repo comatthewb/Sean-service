@@ -6,10 +6,9 @@ const Modal = props => {
     return null;
   }
   return (
-    <div className="modal" id="modal">
+    <div onClick={() => props.close()} className="modal" id="modal">
       <div className="modal-main">
         <svg
-          onClick={() => props.close()}
           className="close"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="-3 -3 30 30"
