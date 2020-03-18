@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
   rerender() {
     axios
-      .get("http://127.0.0.1:3030/imageurl/3")
+      .get("http://127.0.0.1:3030/imageurl/11")
       .then(results => {
         var mainImg = results.data[0];
         this.setState(
