@@ -10,17 +10,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.get("/imageurl", (req, res) => {
+app.get("/imageurl/:id", (req, res) => {
   console.log("GET REQ RCVD");
-  getItemImages((err, results) => {
+  getItemImages(req.params.id, (err, results) => {
     if (err) res.send(err);
     else {
       var urlArr = JSON.parse(results[0].URLS);
-      // console.log("results are ", urlArr);
-      // res.status(200);
       res.send(urlArr);
     }
   });
 });
 
 app.listen(port, () => console.log(`Server is listening on port ${port}!`));
+
+
+

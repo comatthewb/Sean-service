@@ -7,13 +7,11 @@ const db = mysql.createConnection({
   database: "imageurls"
 });
 
-const getItemImages = callback => {
-  db.query(`SELECT URLS FROM URLSET`, (err, info) => {
+const getItemImages = (id, callback) => {
+  db.query(`SELECT URLS FROM URLSET WHERE id = ?`, id, (err, info) => {
     if (err) callback(err, null);
     else callback(null, info);
   });
 };
 
 module.exports = { db, getItemImages };
-
-
