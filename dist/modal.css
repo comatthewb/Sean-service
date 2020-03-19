@@ -1,17 +1,17 @@
-.sean-modal {
+.modal {
   z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.sean-6);
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
   padding: 30px 0px 0px 0px;
   overflow: scroll;
 }
 
-.sean-modal-main {
+.modal-main {
   position: relative;
   z-index: 1000;
   margin-left: 10%;
@@ -22,12 +22,12 @@
   text-align: center;
 }
 
-.sean-modal-image {
+.modal-image {
   width: 100%;
   min-width: 900px;
 }
 
-.sean-close {
+.close {
   top: 12px;
   right: 12px;
   margin: 0 auto;
@@ -40,6 +40,6 @@
   background-color: rgb(254, 255, 254);
 }
 
-.sean-close:hover {
+.close:hover {
   cursor: pointer;
 }
