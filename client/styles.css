@@ -98,13 +98,13 @@ body {
   /* overflow: hidden; */
 }
 
-.image:hover {
+.sean-image:hover {
   border: 2px solid black;
   cursor: pointer;
   opacity: 1;
 }
 
-.image {
+.sean-image {
   opacity: 0.5;
   border: solid transparent;
   display: block;

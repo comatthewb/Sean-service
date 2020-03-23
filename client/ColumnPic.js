@@ -4,7 +4,7 @@ const ColumnPic = ({ image, index, hover }) => {
   return (
     <img
       id={`image${index}`}
-      className="image"
+      className="sean-image"
       src={image}
       alt="stuff"
       onMouseEnter={() => hover(index)}

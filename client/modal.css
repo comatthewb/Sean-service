@@ -1,4 +1,4 @@
-.modal {
+.sean-modal {
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@
   overflow: scroll;
 }
 
-.modal-main {
+.sean-modal-main {
   position: relative;
   z-index: 1000;
   margin-left: 10%;
@@ -22,12 +22,12 @@
   text-align: center;
 }
 
-.modal-image {
+.sean-modal-image {
   width: 100%;
   min-width: 900px;
 }
 
-.close {
+.sean-close {
   top: 12px;
   right: 12px;
   margin: 0 auto;
@@ -40,6 +40,6 @@
   background-color: rgb(254, 255, 254);
 }
 
-.close:hover {
+.sean-close:hover {
   cursor: pointer;
 }
