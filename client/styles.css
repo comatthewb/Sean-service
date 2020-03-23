@@ -2,20 +2,21 @@
   box-sizing: border-box
 } */
 
-/* .sean-links {
+/* .links {
   float: right;
 } */
+
 body {
   width: 100%;
 }
 
-.sean-row {
+.row {
   width: 100%;
   /* overflow: hidden; */
   min-width: 625px;
 }
 
-.sean-row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
@@ -24,30 +25,30 @@ body {
   height: 100%;
 }
 
-.sean-imageContainer {
+.imageContainer {
   display: block;
 }
 
-.sean-columnOne {
+.columnOne {
   /* position:absolute; */
   float: left;
   width: 70px;
   height: 100%;
 }
 
-.sean-buttonColumn {
+.buttonColumn {
   margin-top: calc(33% - 17px);
   padding: 10px;
   float: left;
   width: 5%;
 }
-.sean-button2 {
+.button2 {
   float: left;
   display: block;
   margin-top: calc(600% + 0px);
 }
 
-.sean-buttonColumn2 {
+.buttonColumn2 {
   padding: 10px;
   display: block;
   width: 5%;
@@ -55,7 +56,7 @@ body {
   padding-right: 15px;
 }
 
-.sean-mainImage {
+.mainImage {
   display: list-item;
   border-radius: 10px;
   text-align: right;
@@ -69,26 +70,26 @@ body {
   user-select: none;
 }
 
-.sean-heart {
+.heart {
   float: right;
   fill: white;
   stroke: black;
   stroke-width: 2px;
 }
 
-.sean-redHeart {
+.redHeart {
   fill: red;
 }
 
-.sean-heart:hover {
+.heart:hover {
   cursor: pointer;
 }
 
-.sean-mainImage:hover {
+.mainImage:hover {
   cursor: zoom-in;
 }
 
-.sean-mainImageColumn {
+.mainImageColumn {
   float: left;
   width: 65%;
   padding: 20px;
@@ -97,14 +98,14 @@ body {
   /* overflow: hidden; */
 }
 
-.sean-image:hover {
+.image:hover {
   border: 2px solid black;
   cursor: pointer;
   opacity: 1;
 }
 
-.sean-image {
-  opacity: 0sean-5;
+.image {
+  opacity: 0.5;
   border: solid transparent;
   display: block;
   border-radius: 10px;
@@ -115,7 +116,7 @@ body {
   object-fit: cover;
 }
 
-.sean-selectedImage {
+.selectedImage {
   opacity: 1;
   border: 2px solid black;
 }

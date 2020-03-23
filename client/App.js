@@ -34,7 +34,7 @@ export default class App extends React.Component {
             let element = document.getElementById(
               `image${this.state.mainImageIndex}`
             );
-            element.classList.add("sean-selectedImage");
+            element.classList.add("selectedImage");
           }
         );
       })
@@ -49,11 +49,11 @@ export default class App extends React.Component {
 
   hoverAction(index) {
     var element = document.getElementById(`image${this.state.mainImageIndex}`);
-    element.classList.remove("sean-selectedImage");
+    element.classList.remove("selectedImage");
     var bigImage = this.state.imageArr[index];
     this.setState(state => {
       var element = document.getElementById(`image${index}`);
-      element.classList.add("sean-selectedImage");
+      element.classList.add("selectedImage");
       return { mainImageIndex: index, mainImage: bigImage };
     });
   }
@@ -62,7 +62,7 @@ export default class App extends React.Component {
     event.preventDefault();
     var nextItem = this.state.mainImageIndex + 1;
     var element = document.getElementById(`image${this.state.mainImageIndex}`);
-    element.classList.remove("sean-selectedImage");
+    element.classList.remove("selectedImage");
     if (nextItem >= this.state.imageArr.length) {
       this.setState({ mainImageIndex: 0 });
       nextItem = 0;
@@ -73,14 +73,14 @@ export default class App extends React.Component {
       mainImage: this.state.imageArr[nextItem]
     });
     var element = document.getElementById(`image${nextItem}`);
-    element.classList.add("sean-selectedImage");
+    element.classList.add("selectedImage");
   }
 
   clickPrevious(event) {
     event.preventDefault();
     var prevItem = this.state.mainImageIndex - 1;
     var element = document.getElementById(`image${this.state.mainImageIndex}`);
-    element.classList.remove("sean-selectedImage");
+    element.classList.remove("selectedImage");
     if (prevItem < 0) {
       this.setState({ mainImageIndex: this.state.imageArr.length - 1 });
       prevItem = this.state.imageArr.length - 1;
@@ -91,17 +91,15 @@ export default class App extends React.Component {
       mainImage: this.state.imageArr[prevItem]
     });
     var element = document.getElementById(`image${prevItem}`);
-    element.classList.add("sean-selectedImage");
+    element.classList.add("selectedImage");
   }
 
   heartClick() {
-    if (document.getElementsByClassName("sean-redHeart").length !== 0) {
-      document
-        .getElementById("sean-heart")
-        .classList.remove("sean-redsean-Heart");
+    if (document.getElementsByClassName("redHeart").length !== 0) {
+      document.getElementById("heart").classList.remove("redHeart");
     } else {
-      let element = document.getElementById("sean-heart");
-      element.classList.add("sean-redHeart");
+      let element = document.getElementById("heart");
+      element.classList.add("redHeart");
     }
   }
 
@@ -123,8 +121,8 @@ export default class App extends React.Component {
           show={this.state.modalView}
           close={this.modalClose.bind(this)}
         />
-        <div className="sean-row">
-          <div className="sean-columnOne">
+        <div className="row">
+          <div className="columnOne">
             {this.state.imageArr.map((item, index) => {
               return (
                 <ColumnPic
@@ -136,24 +134,21 @@ export default class App extends React.Component {
               );
             })}
           </div>
-          <div className="sean-imageContainer">
-            <div className="sean-buttonColumn">
+          <div className="imageContainer">
+            <div className="buttonColumn">
               <p>
-                <i
-                  className="sean-lb"
-                  onClick={this.clickPrevious.bind(this)}
-                ></i>
+                <i className="lb" onClick={this.clickPrevious.bind(this)}></i>
               </p>
             </div>
-            <div className="sean-mainImageColumn">
+            <div className="mainImageColumn">
               {/* //style={{ objectFit: "contain" }} */}
               <img
-                className="sean-mainImage"
+                className="mainImage"
                 src={this.state.mainImage}
                 onClick={this.modalRender.bind(this)}
               ></img>
             </div>
-            <div className="sean-buttonColumn2">
+            <div className="buttonColumn2">
               <svg
                 onClick={this.heartClick.bind(this)}
                 xmlns="http://www.w3.org/2000/svg"
@@ -163,12 +158,12 @@ export default class App extends React.Component {
               >
                 <path
                   id="heart"
-                  className="sean-heart"
+                  className="heart"
                   d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z"
                 ></path>
               </svg>
               <div
-                className="sean-rb button2"
+                className="rb button2"
                 onClick={this.clickNext.bind(this)}
               ></div>
             </div>
