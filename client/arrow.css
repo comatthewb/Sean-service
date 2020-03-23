@@ -1,4 +1,4 @@
-.lb {
+.sean-lb {
   /* position: relative;
   z-index: -1; */
   display: inline-block;
@@ -9,7 +9,7 @@
   box-shadow: 0px 0px 4px 2px rgb(230, 230, 230);
 }
 
-.lb:after {
+.sean-lb:after {
   /* position: relative;
   z-index: -1; */
   content: "";
@@ -25,7 +25,7 @@
   transform: rotate(-135deg);
 }
 
-.lb:hover {
+.sean-lb:hover {
   box-shadow: 0px 0px 4px 4px rgb(230, 230, 230);
   cursor: pointer;
 }
