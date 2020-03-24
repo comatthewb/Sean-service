@@ -1,0 +1,122 @@
+/* *{
+  box-sizing: border-box
+} */
+
+/* .links {
+  float: right;
+} */
+
+body {
+  width: 100%;
+}
+
+.sean-row {
+  width: 100%;
+  /* overflow: hidden; */
+  min-width: 625px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  float: left;
+  /* padding: 10px; */
+  height: 100%;
+}
+
+.sean-imageContainer {
+  display: block;
+}
+
+.sean-columnOne {
+  /* position:absolute; */
+  float: left;
+  width: 70px;
+  height: 100%;
+}
+
+.sean-buttonColumn {
+  margin-top: calc(33% - 17px);
+  padding: 10px;
+  float: left;
+  width: 5%;
+}
+.button2 {
+  float: left;
+  display: block;
+  margin-top: calc(600% + 0px);
+}
+
+.sean-buttonColumn2 {
+  padding: 10px;
+  display: block;
+  width: 5%;
+  float: left;
+  padding-right: 15px;
+}
+
+.sean-mainImage {
+  display: list-item;
+  border-radius: 10px;
+  text-align: right;
+  margin: 0% auto;
+  /* margin-top: 30%; */
+  max-width: 100%;
+  max-height: 100%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sean-heart {
+  float: right;
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.sean-redHeart {
+  fill: red;
+}
+
+.heart:hover {
+  cursor: pointer;
+}
+
+.mainImage:hover {
+  cursor: zoom-in;
+}
+
+.sean-mainImageColumn {
+  float: left;
+  width: 65%;
+  padding: 20px;
+  height: 90vh;
+  /* outline: auto; */
+  /* overflow: hidden; */
+}
+
+.sean-image:hover {
+  border: 2px solid black;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.sean-image {
+  opacity: 0.5;
+  border: solid transparent;
+  display: block;
+  border-radius: 10px;
+  max-height: 90%;
+  max-width: 90%;
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+}
+
+.sean-selectedImage {
+  opacity: 1;
+  border: 2px solid black;
+}

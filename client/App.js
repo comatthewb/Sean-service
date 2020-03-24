@@ -12,12 +12,13 @@ export default class App extends React.Component {
       imageArr: [],
       mainImage: "",
       mainImageIndex: 0,
-      currentItemId: 1
+      currentItemId: 2
     };
   }
 
   onNavagateTo(id) {
     this.setState({ currentItemId: id });
+    this.rerender();
   }
 
   rerender() {
@@ -75,7 +76,6 @@ export default class App extends React.Component {
     var element = document.getElementById(`image${nextItem}`);
     element.classList.add("sean-selectedImage");
   }
-
   clickPrevious(event) {
     event.preventDefault();
     var prevItem = this.state.mainImageIndex - 1;
