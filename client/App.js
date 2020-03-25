@@ -12,12 +12,14 @@ export default class App extends React.Component {
       imageArr: [],
       mainImage: "",
       mainImageIndex: 0,
-      currentItemId: 2
+      currentItemId: 33
     };
   }
 
   onNavagateTo(id) {
-    this.setState({ currentItemId: id });
+    this.setState({ currentItemId: id }, () => {
+      this.rerender();
+    });
     this.rerender();
   }
 
@@ -155,7 +157,7 @@ export default class App extends React.Component {
               <svg
                 onClick={this.heartClick.bind(this)}
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 50 25"
+                // viewBox="0 0 200 200"
                 aria-hidden="true"
                 focusable="false"
               >
@@ -166,7 +168,7 @@ export default class App extends React.Component {
                 ></path>
               </svg>
               <div
-                className="rb button2"
+                className="sean-rb button2"
                 onClick={this.clickNext.bind(this)}
               ></div>
             </div>

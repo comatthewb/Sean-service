@@ -27,14 +27,19 @@
   min-width: 900px;
 }
 
+.sean-close-span {
+  display: inline-block;
+}
+
 .sean-close {
+  overflow: visible;
   top: 12px;
   right: 12px;
   margin: 0 auto;
   position: absolute;
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 50px;
   padding: 12px 18px 12px 18px;
   border: 1px solid rgb(0, 0, 0);
   background-color: rgb(254, 255, 254);

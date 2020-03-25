@@ -1,18 +1,9 @@
-/* *{
-  box-sizing: border-box
-} */
-
-/* .links {
-  float: right;
-} */
-
 body {
   width: 100%;
 }
 
 .sean-row {
   width: 100%;
-  /* overflow: hidden; */
   min-width: 625px;
 }
 
@@ -21,7 +12,6 @@ body {
   display: table;
   clear: both;
   float: left;
-  /* padding: 10px; */
   height: 100%;
 }
 
@@ -30,14 +20,13 @@ body {
 }
 
 .sean-columnOne {
-  /* position:absolute; */
   float: left;
   width: 70px;
   height: 100%;
 }
 
 .sean-buttonColumn {
-  margin-top: calc(33% - 17px);
+  margin-top: calc(25% - 17px);
   padding: 10px;
   float: left;
   width: 5%;
@@ -45,7 +34,7 @@ body {
 .button2 {
   float: left;
   display: block;
-  margin-top: calc(600% + 0px);
+  margin-top: calc(508% - 45px);
 }
 
 .sean-buttonColumn2 {

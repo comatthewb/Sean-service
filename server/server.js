@@ -31,9 +31,7 @@ app.get("/imageurl/:id", (req, res) => {
   getItemImages(req.params.id, (err, results) => {
     if (err) res.send(err);
     else {
-      console.log("this is result", results);
       var urlArr = JSON.parse(results[0].URLS);
-      console.log(urlArr.URLS);
       res.send(urlArr);
     }
   });
