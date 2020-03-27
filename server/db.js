@@ -1,11 +1,13 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-  host: "host.docker.local",
+  host: "mysql",
   user: "root",
   password: "password",
-  database: "ImageUrls"
+  database: "ImageUrls",
+  port: 3308
 });
+
 
 const getItemImages = (id, callback) => {
   db.query("SELECT URLS FROM URLSET WHERE itemId = ?", id, (err, info) => {

@@ -11,11 +11,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../dist")));
 
-var boolean = true;
+var boolean = false;
+
 console.log("this is boolean", boolean);
 if (boolean) {
+  db.query(`
+CREATE TABLE UrlSet(
+  itemId INT,
+  Urls text,
+
+  PRIMARY KEY(itemId)
+);`);
+  console.log("adding data");
   for (var item of data) {
-    if (item.imageArray && item.itemId >= 0) {
+    if (item.imageArray && item.itemId !== null) {
       insertItems(item.çitemId, item.imageArray, (err, result) => {
         if (err) {
           console.log(err);
@@ -37,6 +46,8 @@ app.get("/imageurl/:id", (req, res) => {
     }
   });
 });
+
+// app.listen(port, () => console.log(`Server is listening on port ${port}!`));
 
 app.listen(port, "0.0.0.0", () =>
   console.log(`Server is listening on port ${port}!`)

@@ -1,23 +1,26 @@
-# Josh poops his pants and doesn't wipe his butt -bidet away
 version: "3"
 services:
   app:
     container_name: docker-node-mysql
-    command: node server/server.js
+    # command: node server
     restart: always
     build: .
     ports:
       - "3030:3030"
     depends_on:
       - mysql
+    links:
+      - mysql:mysql
   mysql:
     container_name: mysql
-    image: mysql:8.0.18
+    image: mysql:5.7.29
+    # command: --default-authentication-plugin=mysql_native_password
+    # volumes:
+    # - mysql-data:/var/lib/mysql
+    # - ./init:/docker-entrypoint-init.d
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: ImageUrls
     ports:
-      - "3306:3306"
-
-
-# fix command 
+      - "3308:3306"
+# fix command
