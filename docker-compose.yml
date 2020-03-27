@@ -1,0 +1,23 @@
+# Josh poops his pants and doesn't wipe his butt -bidet away
+version: "3"
+services:
+  app:
+    container_name: docker-node-mysql
+    command: node server/server.js
+    restart: always
+    build: .
+    ports:
+      - "3030:3030"
+    depends_on:
+      - mysql
+  mysql:
+    container_name: mysql
+    image: mysql:8.0.18
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ImageUrls
+    ports:
+      - "3306:3306"
+
+
+# fix command 

@@ -1,10 +1,10 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-  host: "localhost",
+  host: "host.docker.local",
   user: "root",
   password: "password",
-  database: "imageurls"
+  database: "ImageUrls"
 });
 
 const getItemImages = (id, callback) => {

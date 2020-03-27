@@ -11,11 +11,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../dist")));
 
-var boolean = false;
+var boolean = true;
+console.log("this is boolean", boolean);
 if (boolean) {
   for (var item of data) {
     if (item.imageArray && item.itemId >= 0) {
-      insertItems(item.itemId, item.imageArray, (err, result) => {
+      insertItems(item.çitemId, item.imageArray, (err, result) => {
         if (err) {
           console.log(err);
         } else {
@@ -37,4 +38,6 @@ app.get("/imageurl/:id", (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Server is listening on port ${port}!`));
+app.listen(port, "0.0.0.0", () =>
+  console.log(`Server is listening on port ${port}!`)
+);
