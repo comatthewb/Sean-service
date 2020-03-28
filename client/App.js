@@ -21,12 +21,12 @@ export default class App extends React.Component {
     };
   }
 
-  // onNavagateTo(id) {
-  //   this.setState({ currentItemId: id }, () => {
-  //     this.rerender();
-  //   });
-  //   this.rerender();
-  // }
+  onNavagateTo(id) {
+    this.setState({ currentItemId: id }, () => {
+      this.rerender();
+    });
+    this.rerender();
+  }
 
   rerender() {
     axios
@@ -51,9 +51,9 @@ export default class App extends React.Component {
       });
   }
 
-  // componentDidMount() {
-  //   this.rerender();
-  // }
+  componentDidMount() {
+    this.rerender();
+  }
 
   hoverAction(index) {
     var element = document.getElementById(`image${this.state.mainImageIndex}`);
