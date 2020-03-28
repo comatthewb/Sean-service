@@ -25,7 +25,9 @@ export default class App extends React.Component {
 
   rerender() {
     axios
-      .get(`http://127.0.0.1:3030/imageurl/${this.state.currentItemId}`) //defines which ID we are going to use
+      .get(
+        `http://seanservice1-env.eba-z52ut3ea.us-east-1.elasticbeanstalk.com/imageurl/${this.state.currentItemId}`
+      ) //defines which ID we are going to use
       .then(results => {
         var mainImg = results.data[0];
         this.setState(
