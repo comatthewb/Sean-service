@@ -12,15 +12,15 @@ export default class App extends React.Component {
       imageArr: [],
       mainImage: " ",
       mainImageIndex: 0,
-      currentItemId: 39
+      currentItemId: 0
     };
-  }
 
-  onNavagateTo(id) {
-    this.setState({ currentItemId: id }, () => {
-      this.rerender();
+    document.addEventListener("onNavigate", ({ id }) => {
+      console.log("change pages to: ", id);
+      this.setState({ currentItemId: id }, () => {
+        this.rerender();
+      });
     });
-    this.rerender();
   }
 
   rerender() {
