@@ -24,8 +24,11 @@ app.get("/imageurl/:id", (req, res) => {
   getItemImages(req.params.id, (err, results) => {
     if (err) res.send(err);
     else {
-      var urlArr = JSON.parse(results[0].imageArray);
-      res.send(urlArr);
+      if (results.length === 0) res.status(500);
+      else {
+        var urlArr = JSON.parse(results[0].imageArray);
+        res.send(urlArr);
+      }
     }
   });
 });

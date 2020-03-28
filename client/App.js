@@ -12,7 +12,7 @@ export default class App extends React.Component {
       imageArr: [],
       mainImage: " ",
       mainImageIndex: 0,
-      currentItemId: 1
+      currentItemId: 5
     };
 
     document.addEventListener("onNavigate", ({ id }) => {
