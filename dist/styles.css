@@ -1,14 +1,16 @@
 body {
   width: 100%;
+  white-space: nowrap;
 }
 
 .sean-row {
   width: 100%;
   min-width: 625px;
+  white-space: nowrap;
 }
 
 .row:after {
-  content: "";
+  /* content: ""; */
   display: table;
   clear: both;
   float: left;
@@ -38,25 +40,12 @@ body {
 }
 
 .sean-buttonColumn2 {
+  white-space: nowrap;
   padding: 10px;
   display: block;
   width: 5%;
   float: left;
   padding-right: 15px;
-}
-
-.sean-mainImage {
-  display: list-item;
-  border-radius: 10px;
-  text-align: right;
-  margin: 0% auto;
-  /* margin-top: 30%; */
-  max-width: 100%;
-  max-height: 100%;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .sean-heart {
@@ -74,13 +63,28 @@ body {
   cursor: pointer;
 }
 
+.sean-mainImage {
+  display: list-item;
+  border-radius: 10px;
+  text-align: right;
+  margin: 0% auto;
+  /* margin-top: 30%; */
+  max-width: 100%;
+  max-height: 100%;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .mainImage:hover {
   cursor: zoom-in;
 }
 
 .sean-mainImageColumn {
+  white-space: nowrap;
   float: left;
-  width: 65%;
+  width: 80%;
   padding: 20px;
   max-height: 80vh;
   /* outline: auto; */
