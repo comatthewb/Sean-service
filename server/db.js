@@ -1,18 +1,18 @@
 const mysql = require("mysql");
 
-// const db = mysql.createConnection({
-//   host: "104.154.16.201",
-//   user: "root",
-//   password: "password",
-//   database: "ImageUrls"
-// });
-
 const db = mysql.createConnection({
-  host: "localhost",
+  host: "104.154.16.201",
   user: "root",
   password: "password",
   database: "ImageUrls"
 });
+
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   database: "ImageUrls"
+// });
 
 const getItemImages = (id, callback) => {
   db.query(
