@@ -1,55 +1,10 @@
 body {
   width: 100%;
-  white-space: nowrap;
-}
-
-.sean-row {
-  width: 100%;
-  min-width: 625px;
-  white-space: nowrap;
-}
-
-.row:after {
-  /* content: ""; */
-  display: table;
-  clear: both;
-  float: left;
-  height: 100%;
-}
-
-.sean-imageContainer {
-  display: block;
-}
-
-.sean-columnOne {
-  float: left;
-  width: 70px;
-  height: 100%;
-}
-
-.sean-buttonColumn {
-  margin-top: calc(25% - 17px);
-  padding: 10px;
-  float: left;
-  width: 5%;
-}
-.button2 {
-  float: left;
-  display: block;
-  margin-top: calc(508% - 45px);
-}
-
-.sean-buttonColumn2 {
-  white-space: nowrap;
-  padding: 10px;
-  display: block;
-  width: 5%;
-  float: left;
-  padding-right: 15px;
 }
 
 .sean-heart {
-  float: right;
+  position: absolute;
+  right: 4%;
   fill: white;
   stroke: black;
   stroke-width: 2px;
@@ -63,14 +18,21 @@ body {
   cursor: pointer;
 }
 
+.sean-mainImageDiv {
+  height: 500px;
+  /* min-height: 100%; */
+  /* max-width: 100%; */
+}
+
 .sean-mainImage {
-  display: list-item;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
   text-align: right;
   margin: 0% auto;
-  /* margin-top: 30%; */
+  object-fit: contain;
   max-width: 100%;
-  max-height: 100%;
+  /* max-height: 100vh; */
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -79,16 +41,6 @@ body {
 
 .mainImage:hover {
   cursor: zoom-in;
-}
-
-.sean-mainImageColumn {
-  white-space: nowrap;
-  float: left;
-  width: 80%;
-  padding: 20px;
-  max-height: 80vh;
-  /* outline: auto; */
-  /* overflow: hidden; */
 }
 
 .sean-image:hover {
