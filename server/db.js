@@ -17,7 +17,7 @@ const db = mysql.createConnection({
 const getItemImages = (id, callback) => {
   db.query(
     "SELECT imageArray FROM UrlSet WHERE itemId = ?",
-    id,
+    id, 
     (err, info) => {
       if (err) {
         console.log(err);
