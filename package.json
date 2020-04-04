@@ -32,9 +32,11 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "faker": "^4.1.0",
     "live-server": "^1.2.1",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.0",
+    "pg": "^8.0.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   }

@@ -1,11 +1,31 @@
-const mysql = require("mysql");
+// const mysql = require("mysql");
+const faker = require("faker");
 
-const db = mysql.createConnection({
-  host: "104.154.16.201",
-  user: "root",
+const { Client } = require("pg");
+const client = new Client({
+  user: "postgres",
+  database: "postgres",
   password: "password",
-  database: "ImageUrls"
 });
+
+const db = client.connect();
+
+// let result = [];
+const generateLinks = () => {
+  for (let i = 0; i < 10000000; i++) {
+    result.push(faker.image.imageUrl());
+  }
+  return result;
+};
+
+// console.log(generateLinks());
+
+// const db = mysql.createConnection({
+//   host: "104.154.16.201",
+//   user: "root",
+//   password: "password",
+//   database: "ImageUrls"
+// });
 
 // const db = mysql.createConnection({
 //   host: "localhost",
@@ -14,10 +34,10 @@ const db = mysql.createConnection({
 //   database: "ImageUrls"
 // });
 
-const getItemImages = (id, callback) => {
-  db.query(
-    "SELECT imageArray FROM UrlSet WHERE itemId = ?",
-    id, 
+const getAllItemImages = (callback) => {
+  client.query(
+    "SELECT * from imageUrls",
+
     (err, info) => {
       if (err) {
         console.log(err);
@@ -29,15 +49,29 @@ const getItemImages = (id, callback) => {
   );
 };
 
-const insertItems = (id, item, callback) => {
-  db.query(
-    "Insert into UrlSet (itemId, imageArray) values (?,?)",
-    [id, item],
+const insertImagesURL = (array, callback) => {
+  client.query(
+    "insert into ImageUrls(image_url) VALUES ('test')",
     (err, info) => {
-      if (err) callback(err, null);
-      else callback(null, info);
+      if (err) {
+        console.log(err);
+        callback(err, null);
+      } else {
+        callback(null, info);
+      }
     }
   );
 };
 
-module.exports = { db, getItemImages, insertItems };
+// const insertItems = (id, item, callback) => {
+//   db.query(
+//     "Insert into UrlSet (itemId, imageArray) values (?,?)",
+//     [id, item],
+//     (err, info) => {
+//       if (err) callback(err, null);
+//       else callback(null, info);
+//     }
+//   );
+// };
+
+module.exports = { getAllItemImages, db, insertImagesURL, generateLinks };
